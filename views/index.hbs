@@ -1,0 +1,15 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+<form action="/meme" method="POST" enctype="multipart/form-data">
+  <input type="text" name="title">
+  <input type="text" name="description">
+  <input type="file" name="photo" />
+  <button type="submit">New MEME</button>
+</form>
+<section>
+  {{#each memes}}
+  <h2>{{this.title}}</h2>
+  <p>{{this.description}}</p>
+  <img src="{{this.image_url}}" alt="">
+  {{/each}}
+</section>
